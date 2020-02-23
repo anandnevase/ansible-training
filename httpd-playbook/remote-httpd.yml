@@ -1,0 +1,13 @@
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - file:
+        path: /var/www/html/index.html
+        state: absent
+    - service:
+        name: httpd
+        state: stopped
+    - yum:
+        name: httpd
+        state: absent

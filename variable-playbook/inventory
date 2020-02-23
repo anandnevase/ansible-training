@@ -1,0 +1,5 @@
+192.168.0.238 host_var="HOST Varibale"
+
+
+[all:vars]
+group_var="GROUP Variable"

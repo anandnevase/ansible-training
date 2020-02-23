@@ -1,0 +1,21 @@
+- hosts: all
+  gather_facts: no
+  vars:
+    play_var: "PLAY Variable"
+  vars_files:
+    - file_vars.yml
+  tasks:
+    - set_fact:
+        task_var: "TASK Variable"
+
+    - include_vars: include_var.yml
+
+    - debug: 
+        msg:
+          - "{{play_var}}"
+          - "{{task_var}}"
+          - "{{include_var}}"
+          - "{{host_var}}"
+          - "{{group_var}}"
+          - "{{cmd_line_var}}"
+          - "{{file_var}}"

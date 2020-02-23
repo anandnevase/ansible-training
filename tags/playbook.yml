@@ -1,0 +1,19 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - debug:
+        msg: "Task 1 - 1"
+      tags: task1, mix1
+
+    - debug:
+        msg: "Task 1 - 2"
+      tags: task1, mix2
+
+    - debug:
+        msg: "Task 2 - 1"
+      tags: task2, mix1
+
+    - debug:
+        msg: "Task 2 - 2"
+      tags: task2, mix2
+

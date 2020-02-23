@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: yes
+  tasks:
+    - debug: 
+        msg: "Hello from {{ansible_hostname}}"
+
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg: "Hello from {{ansible_hostname}}"
+

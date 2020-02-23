@@ -1,0 +1,19 @@
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: install httpd package
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+
+    - name: Create index.html
+      copy: 
+        content: "HELLO"
+        dest: /var/www/html/index.html
+

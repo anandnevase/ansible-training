@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - cred.yml
+  tasks:
+    - debug: 
+        msg: 
+          - "Username: {{username}}"
+          - "Password: {{password}}"
