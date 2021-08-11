@@ -29,4 +29,17 @@ SSH password:
 
 ```
 $ ansible all -i 192.168.194.129,192.168.194.130, -m ping -u root -k
-````
+```
+
+# Adhoc command - Setup Module
+```
+$ ansible all -m setup -u root -k
+```
+
+# Adhoc command - install httpd
+```
+  ansible all -m yum -a "name=httpd state=latest" -u root -k
+  ansible all -m service -a "name=httpd state=started" -u root -k
+  ansible all -m service -a "name=httpd state=stopped" -u root -k
+  ansible all -m yum -a "name=httpd state=removed" -u root -k
+```
