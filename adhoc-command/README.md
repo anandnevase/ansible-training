@@ -24,3 +24,9 @@ SSH password:
     "ping": "pong"
 }
 ```
+
+# Adhoc command without inventory file
+
+```
+$ ansible all -i 192.168.194.129,192.168.194.130, -m ping -u root -k
+````
