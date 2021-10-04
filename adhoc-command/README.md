@@ -1,13 +1,15 @@
 # Adhoc command
 
 ## adhoc command syntax
-ansible <inventory-host>/all -m <module-name> -u <machine-user> -k
+```
+$ ansible <inventory-host>/all -m <module-name> -u <machine-user> -k
+```
 Note : all will refer all host from inventory file  
 
 
 # Ping command
 ```
-# ansible all -m ping -u ansible -k
+$ ansible all -m ping -u ansible -k
 SSH password:
 192.168.85.129 | SUCCESS => {
     "ansible_facts": {
