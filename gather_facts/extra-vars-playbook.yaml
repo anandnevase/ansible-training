@@ -1,0 +1,8 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    build_name: play-app
+    version: v2.0.0
+  tasks:
+    - debug:
+        msg: "{{ build_name }}   --- {{ version }}"

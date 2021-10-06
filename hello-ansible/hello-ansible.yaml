@@ -1,0 +1,22 @@
+- name: Play-1
+  hosts: all
+  tasks:
+    - name: display-1
+      debug:
+        msg: "Hello Ansible from Play-1 Task-1"
+
+    - name: display-2
+      debug:
+        msg: "Hello Ansible from Play-1 Task-2"
+
+
+- name: Play-2
+  hosts: all
+  tasks:
+    - name: display-1
+      debug:
+        msg: "Hello Ansible from Play-2 Task-1"
+
+    - name: display-2
+      debug:
+        msg: "Hello Ansible from Play-2 Task-2"
