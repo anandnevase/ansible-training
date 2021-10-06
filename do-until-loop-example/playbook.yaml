@@ -1,0 +1,11 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - shell: cat /usr/bin/foo
+      register: result
+      until: result.stdout.find("all system go down")!=-1
+      retries: 5
+      delay: 2
+
+    - debug:
+        msg: "{{ result }}"
