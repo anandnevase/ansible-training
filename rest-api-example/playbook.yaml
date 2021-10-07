@@ -1,0 +1,18 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: GET CALL
+      uri:
+        url: https://reqres.in/api/users/2
+        method: GET
+        return_content: yes
+      register: get_result
+
+    - debug:
+        msg: "{{ get_result }}"
+
+    - name: get email and fname
+      debug:
+        msg:
+          - "EMAIL : {{ get_result['json']['data']['email'] }}" # one syntax
+          - "First Name : {{ get_result.json.data.first_name }}" # 2nd syntax

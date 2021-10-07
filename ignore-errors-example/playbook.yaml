@@ -1,0 +1,11 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - debug:
+        msg: "Task -1"
+
+    - command: run-cmd
+      ignore_errors: yes
+
+    - debug:
+        msg: "TASK-2"
