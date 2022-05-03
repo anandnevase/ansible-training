@@ -12,7 +12,7 @@ This repository contains three node ansible lab setup using vagrant and virtualb
 
 ## Start Vagrant
 ```
-$ vagrant up
+$ vagrant up --provider=virtualbox
 ```
 
 ## Check Vagrant Status
