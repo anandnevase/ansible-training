@@ -1,0 +1,10 @@
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg:
+          - "{{ ansible_virtualization_role }}"
+          - "{{ ansible_default_ipv4['address'] }}"
+          - "{{ ansible_hostname }}"
+          - "{{ ansible_os_family }}"
+          - "{{ ansible_architecture }}"

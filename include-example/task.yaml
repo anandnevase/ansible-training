@@ -1,0 +1,5 @@
+- debug:
+    msg: "TASK-1 from task.yaml"
+
+- debug:
+    msg: "TASK-2 from task.yaml"

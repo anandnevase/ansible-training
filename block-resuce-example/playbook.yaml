@@ -1,0 +1,13 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - block:
+        - debug: 
+            msg: "Inside block"
+        - command: run-cmd # check date command as well
+      rescue:
+        - debug:
+            msg: "inside rescue"
+      always:
+        - debug:
+            msg: "Inside always"

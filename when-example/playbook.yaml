@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    os_type: rhel
+  tasks:
+    - include: ubuntu.yaml
+      when: os_type == 'ubuntu'
+
+    - include: rhel.yaml
+      when: os_type == 'rhel'

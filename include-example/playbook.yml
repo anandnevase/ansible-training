@@ -1,0 +1,7 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - debug:
+        msg: "Task from playbook"
+        
+    - include: task.yaml

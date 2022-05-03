@@ -1,0 +1,36 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    fruits:
+      - mango
+      - kiwi
+      - banana
+    names:
+      - fname: Anand
+        lname: Nev
+        fruit: mango
+      - fname: Ram
+        lname: Yadav
+        fruit: kiwi
+  tasks:
+    - debug: 
+        msg: "Hi {{ item }}"
+      with_items:
+        - 'Ram'
+        - 'Sita'
+        - 'Ravi'
+
+    - debug:
+        msg: "I love {{ item }}"
+      with_items: "{{ fruits }}"
+
+    - debug:
+        msg: 
+          - "First name: {{ item['fname'] }}"
+          - "Last name: {{ item['lname'] }}"
+      with_items: "{{ names }}"
+
+
+    - debug:
+        msg: "I am {{ item['fname'] }}. I love {{ item['fruit'] }}"
+      with_items: "{{ names }}"

@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+   - name: test custom module
+     mymodule:
+     register: uptime
+   - debug: var=uptime

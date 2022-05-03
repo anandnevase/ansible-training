@@ -1,0 +1,25 @@
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  tasks:
+    - yum:
+        name: httpd
+        state: latest
+      notify: start-service
+
+    - copy:
+        content: "Hello Ansible"
+        dest: /var/www/html/index.html
+    
+    - debug:
+        msg: "finished"
+
+  handlers:
+    - name: start-service
+      service:
+        name: httpd
+        state: started
+
+    - name: msg    
+      debug:
+        msg: "HTTPD Service Started"
