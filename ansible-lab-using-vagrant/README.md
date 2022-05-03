@@ -1,24 +1,33 @@
-# ansible-lab
-Ansible Lab: 3 nodes setup: control node (ansible installed) + 2 workers in Vagrant (Centos 7 box).
+# Ansible Lab Using Vagrant And Virtualbox
 
-# Requirements
+This repository contains three node ansible lab setup using vagrant and virtualbox as the provider.
 
-1. Supported Host OS:
-  - Linux
-  - MacOS
-  - Windows
-2. Vagrant >= 2.1.5
-3. VirtualBox >= 5.2.18
-4. Supported Guest OS: centos/7 box
+|    Node Type   | Node Name             |  IP Address  | OS Flavor     |
+| ---------------| --------------------- |--------------|---------------|
+| Controller Node| controller.anslab.com | 192.168.10.3 | centos/7      |
+| managed Node   | managed1.anslab.com   | 192.168.10.4 | ubuntu/focal64|
+| managed Node   | managed2.anslab.com   | 192.168.10.5 | ubuntu/focal64|
 
-# How to Start Lab
+# Steps to Setup lab
 
-```bash
-vagrant up
+## Start Vagrant
+```
+$ vagrant up
 ```
 
-# How to run ansible provisioning from control-node
+## Check Vagrant Status
+```
+$ vagrant status
+```
 
-```bash
-vagrant ssh control-node -c  "ansible-playbook /vagrant/provisioning/ansible/playbook.yml"
+
+## Login to Controller & Configure Nodes
+```
+$ vagrant ssh controller
+$ bash /vagrant/key_gen.sh
+```
+
+## Test ansible Setup
+```
+$ ansible all -i /home/vagrant/ansible_project/inventory -m ping
 ```
