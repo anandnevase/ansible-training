@@ -24,6 +24,8 @@ $ vagrant status
 ## Login to Controller & Configure Nodes
 ```
 $ vagrant ssh controller
+$ sudo apt install -y dos2unix
+$ dos2unix /vagrant/key_gen.sh
 $ bash /vagrant/key_gen.sh
 ```
 

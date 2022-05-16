@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Managed node 2.
-  config.vm.define "mmanaged2" do |m2|
+  config.vm.define "managed2" do |m2|
     m2.vm.box = "ubuntu/focal64"
     m2.vm.hostname = "managed2.anslab.com"
     m2.vm.network "private_network", ip: "192.168.10.5"
